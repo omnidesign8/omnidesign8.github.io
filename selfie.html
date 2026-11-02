@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>selfie</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js
+/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>.navbar-nav {list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: row; gap: 20px;}
+
+  /* Center the navigation links */
+  .navbar-nav {float: none; display: flex; justify-content: center; flex-direction: row; gap: 20px; list-style: none; padding-left: 0; margin: 0 auto;}
+  
+  /* Center images */
+  img {display: block; margin-left: auto; margin-right: auto; max-width: 100%; height: auto;}
+
+
+  .navbar-nav {list-style: none; padding-left: 0 margin: 0; display: flex; flex-direction: row; gap: 20px;}
+  
+  /* Navigation colors */
+  .navbar {background-color: #176B67; border: none;}
+
+  .navbar-nav li a {color: white;}
+
+  .navbar-nav li a:hover {color: #f4c95d; background-color: transparent;}
+  
+/* Center headings and paragraphs */
+h1, p {text-align: center;}
+
+  /* Control paragraph width */
+  .content {
+  max-width: 800px;
+  margin: 25px auto;
+  text-align: center;
+  line-height: 1.7;
+  padding: 0 15px;}
+  
+    /* Control paragraph width */
+  .content {
+  max-width: 800px;
+  margin: 25px auto;
+  text-align: center;
+  line-height: 1.7;
+  padding: 0 15px;}
+  
+  /* Center iframe */iframe 
+  {display: block;
+  margin: 25px auto;}
+  
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">home</a>
+    </li>
+	
+    <li class="nav-item">
+      <a class="nav-link" href="mememashup.html">meme</a>
+    </li>
+	
+    <li class="nav-item">
+      <a class="nav-link" href="glitchart.html">glitch</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="minecraft.html">minecraft</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="netart/index.html">netart</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="selfie.html">p5.js portrait</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="about.html">about me</a>
+    </li>
+	
+	
+  </ul>
+
+</nav>
+</head>
+<body>
+
+<h1>p5.js Self Portrait</h1>
+<p class="content">This is a Self Portrait.</p>
+<iframe src="selfieportrait/index.html" height="610" width="610" title="Self Portrait"></iframe>
+<p class="content">function setup() {
+  createCanvas(600, 600);
+}
+
+function draw() {
+  background(235, 225, 205);
+
+
+  noStroke();
+  fill(75, 85, 60);
+  quad(80, 440, 520, 440, 590, 600, 10, 600);
+
+
+  fill(155, 95, 70);
+  rect(210, 390, 180, 130);
+
+
+  fill(170, 105, 78);
+  ellipse(300, 300, 235, 285);
+
+
+  fill(35, 30, 25);
+
+  beginShape();
+
+ 
+  vertex(185, 275);
+  vertex(215, 345);
+  vertex(235, 365);
+  vertex(255, 355);
+  vertex(280, 375);
+  vertex(300, 350);
+  vertex(320, 375);
+  vertex(345, 355);
+  vertex(365, 365);
+  vertex(385, 345);
+  vertex(415, 275);
+
+
+  vertex(405, 410);
+  vertex(370, 460);
+  vertex(335, 495);
+  vertex(300, 520);
+  vertex(265, 495);
+  vertex(230, 460);
+  vertex(195, 410);
+
+  endShape(CLOSE);
+
+
+  beginShape();
+
+  vertex(300, 325);
+  vertex(275, 310);
+  vertex(250, 315);
+  vertex(230, 340);
+  vertex(260, 355);
+  vertex(285, 345);
+  vertex(300, 335);
+  vertex(315, 345);
+  vertex(340, 355);
+  vertex(370, 340);
+  vertex(350, 315);
+  vertex(325, 310);
+
+  endShape(CLOSE);
+
+
+  fill(55, 60, 40);
+
+  beginShape();
+  vertex(205, 20);
+  vertex(395, 20);
+  vertex(470, 155);
+  vertex(535, 185);
+  vertex(580, 225);
+  vertex(20, 225);
+  vertex(65, 185);
+  vertex(130, 155);
+  endShape(CLOSE);
+
+ 
+  fill(210, 165, 65, 100);
+  stroke(210, 165, 65);
+  strokeWeight(5);
+
+  ellipse(245, 270, 100, 100);
+  ellipse(355, 270, 100, 100);
+
+
+  line(295, 270, 305, 270);
+}</p>
+</body>
+</html>
