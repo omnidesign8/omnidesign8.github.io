@@ -35,6 +35,15 @@
   
 /* Center headings and paragraphs */
 h1, p {text-align: center;}
+
+  /* Control paragraph width */
+  .content {
+  max-width: 800px;
+  margin: 25px auto;
+  text-align: center;
+  line-height: 1.7;
+  padding: 0 15px;}
+  
 </style>
 </head>
 
@@ -65,6 +74,10 @@ h1, p {text-align: center;}
       <a class="nav-link" href="netart/index.html">netart</a>
     </li>
 	
+		<li class="nav-item">
+      <a class="nav-link" href="portrait.html">portrait</a>
+    </li>
+	
 	<li class="nav-item">
       <a class="nav-link" href="about.html">about me</a>
     </li>
@@ -72,7 +85,6 @@ h1, p {text-align: center;}
   </ul>
 
 </nav>
-</div>
 
 </head>
 <body>
@@ -81,7 +93,8 @@ h1, p {text-align: center;}
 
 <img src="portfolio.jpg" alt="portfolio" width="500">
 
-<p>My first paragraph.</p>
+<p class="content">My first paragraph.</p>
 
 </body>
+</div>
 </html>
