@@ -34,28 +34,30 @@
 
   .navbar-nav li a:hover {color: #f4c95d; background-color: transparent;}
   
-/* Center headings and paragraphs */
-h1, p {text-align: center;}
+/* Center heading */
+h1 {
+  text-align: center;
+}
 
-  /* Control paragraph width */
-  .content {
+/* Center description above game */
+.description {
+  text-align: center;
+}
+
+/* Center content block, but keep text left aligned */
+.content {
   max-width: 800px;
   margin: 25px auto;
-  text-align: center;
+  text-align: left;
   line-height: 1.7;
-  padding: 0 15px;}
-  
-    /* Control paragraph width */
-  .content {
-  max-width: 800px;
+  padding: 0 15px;
+}
+
+/* Center iframe */
+iframe {
+  display: block;
   margin: 25px auto;
-  text-align: center;
-  line-height: 1.7;
-  padding: 0 15px;}
-  
-  /* Center iframe */iframe 
-  {display: block;
-  margin: 25px auto;}
+}
   
 </style>
 </head>
@@ -96,6 +98,10 @@ h1, p {text-align: center;}
     </li>
 	
 	<li class="nav-item">
+      <a class="nav-link" href="game.html">Game Interatctive</a>
+    </li>
+	
+	<li class="nav-item">
       <a class="nav-link" href="about.html">about me</a>
     </li>
 	
@@ -107,7 +113,7 @@ h1, p {text-align: center;}
 <body>
 
 <h1>diy ps</h1>
-<p class="content">This is a do it yourself version of Photoshop</p>
+<h1>Do it yourself version of Photoshop</h1>
  <iframe src="diyps2026/index.html" height="605" width="605" title="diyps"></iframe>
 
 <p class="content"> o or O = Mask,

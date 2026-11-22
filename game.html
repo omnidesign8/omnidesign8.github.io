@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GameInteraction</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js
+/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>.navbar-nav {list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: row; gap: 20px;}
+
+  /* Center the navigation links */
+  .navbar-nav {float: none; display: flex; justify-content: center; flex-direction: row; gap: 20px; list-style: none; padding-left: 0; margin: 0 auto;}
+  
+  /* Center images */
+  img {display: block; margin-left: auto; margin-right: auto; max-width: 100%; height: auto;}
+
+
+  .navbar-nav {list-style: none; padding-left: 0 margin: 0; display: flex; flex-direction: row; gap: 20px;}
+  
+  /* Navigation colors */
+  .navbar {background-color: #176B67; border: none;}
+
+  .navbar-nav li a {color: white;}
+
+  .navbar-nav li a:hover {color: #f4c95d; background-color: transparent;}
+  
+/* Center heading */
+h1 {
+text-align: center;
+}
+
+/* Center description above game */
+.description {
+  text-align: center;
+}
+
+/* Center content block, but keep text left aligned */
+.content {
+  max-width: 800px;
+  margin: 25px auto;
+  text-align: left;
+  line-height: 1.7;
+  padding: 0 15px;
+}
+
+/* Center iframe */
+iframe {
+  display: block;
+  margin: 25px auto;
+}
+  
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">home</a>
+    </li>
+	
+    <li class="nav-item">
+      <a class="nav-link" href="mememashup.html">meme</a>
+    </li>
+	
+    <li class="nav-item">
+      <a class="nav-link" href="glitchart.html">glitch</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="minecraft.html">minecraft</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="netart/index.html">netart</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="selfie.html">p5.js portrait</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="diyps.html">diy ps</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="game.html">Game Interatctive</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="about.html">about me</a>
+    </li>
+	
+	
+  </ul>
+
+</nav>
+</head>
+<body>
+<h1>Game Interaction</h1>
+<h1>This is an interactive Where's Waldo themed game</h1>
+ <iframe src="game/index.html" height="609" width="609" title="game"></iframe>
+ 
+ <p class="content"> var score = 0;
+var gameState = "HOME";
+var found1 = false;
+var found2 = false;
+var found3 = false;
+var img;
+var img2;
+var img3;
+var img4;
+var img5;
+
+function preload() {
+  img = loadImage('https://omnidesign8.github.io/gameinteraction/homescreen.png');
+  // Level 1
+  img2 = loadImage('https://omnidesign8.github.io/gameinteraction/wwshopping.png');
+  // Level 2
+  img3 = loadImage('https://omnidesign8.github.io/gameinteraction/wwsnow.png');
+  // Level 3
+  img4 = loadImage('https://omnidesign8.github.io/gameinteraction/wwrobot.png');
+  // End Screen
+  img5 = loadImage('https://omnidesign8.github.io/gameinteraction/playagain.png');
+}
+
+function setup() {
+  createCanvas(600, 600);
+  textAlign(CENTER);
+  textSize(20);
+}
+
+function draw() {
+  background(220);
+
+  if (gameState == "HOME") {
+    homeScreen();
+  }
+  if (gameState == "L1") {
+    levelOne();
+  }
+  if (gameState == "L2") {
+    levelTwo();
+  }
+  if (gameState == "L3") {
+    levelThree();
+  }
+  if (gameState == "END") {
+    endScreen();
+  }
+
+  // Hide Score
+  if (gameState != "HOME") {
+    fill(0);
+    textSize(20);
+    text("score: " + score, width/2, 40);
+  }
+}
+
+// HOME SCREEN
+function homeScreen() {
+  image(img, 0, 0, 600, 600);
+}
+
+// CLICK
+function mousePressed() {
+  // Start button
+  if (gameState == "HOME") {
+    if (mouseX >= 161 && mouseX <= 455 && mouseY >= 516 && mouseY <= 567){
+      gameState = "L1";
+    }
+  }
+
+  // Play Again 
+  if (gameState == "END") {
+    if (mouseX >= 161 && mouseX <= 455 && mouseY >= 516 && mouseY <= 567){
+      score = 0;
+      found1 = false;
+      found2 = false;
+      found3 = false;
+      gameState = "HOME";
+    }
+  }
+}
+
+// FIND CHARACTER
+function mouseMoved() {
+  // LEVEL 1
+  if (gameState == "L1" && found1 == false) {
+    if (mouseX >= 561 && mouseX <= 579 && mouseY >= 0 && mouseY <= 58){
+      found1 = true;
+      score = score + 1;
+      gameState = "L2";
+    }
+  }
+  // LEVEL 2
+  if (gameState == "L2" && found2 == false) {
+    if (mouseX >= 273 && mouseX <= 294 && mouseY >= 350 && mouseY <= 437){
+      found2 = true;
+      score = score + 1;
+      gameState = "L3";
+    }
+  }
+  // LEVEL 3
+  if (gameState == "L3" && found3 == false) {
+    if (mouseX >= 177 && mouseX <= 188 && mouseY >= 220 && mouseY <= 244){
+      found3 = true;
+      score = score + 1;
+      gameState = "END";
+    }
+  }
+}
+// LEVEL 1
+function levelOne() {
+  image(img2, 0, 0, 600, 600);
+  fill(0);
+  textSize(20);
+  text("level 1", width/2, height-20);
+}
+// LEVEL 2
+function levelTwo() {
+  image(img3, 0, 0, 600, 600);
+  fill(0);
+  textSize(20);
+  text("level 2", width/2, height-20);
+}
+// LEVEL 3
+function levelThree() {
+  image(img4, 0, 0, 600, 600);
+  fill(0);
+  textSize(20);
+  text("level 3", width/2, height-20);
+}
+// END SCREEN
+function endScreen() {
+  image(img5, 0, 0, 600, 600);
+}
+ </p>
+
+ </body>
+ </html>
+
+
